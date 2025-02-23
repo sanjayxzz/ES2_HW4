@@ -1,0 +1,100 @@
+ do once more (not understood)
+//1//
+const { log } = require("console");
+
+const calculateAverage = (numbers) =>
+  {
+  const sum = numbers.reduce((acc, num) => acc + num, 0);
+    return sum / numbers.length;
+  }
+console.log(calculateAverage([5,10,15]))
+
+
+//2//
+
+const reverseString = (str) => {
+  let reversedStr = ""
+  for(let i=str.length - 1; i>=0 ; i--){
+     reversedStr = reversedStr + str[i]
+  }
+  return reversedStr;
+}
+  console.log(reverseString("sanjay"))
+
+
+//3//
+
+const findLongestWord = (word1,word2,word3) => word1+ word2 + word3
+
+console.log(findLongestWord("sanjay","yashas","chetan"))
+
+//4//
+
+const calculateStringLength = (str) => str.length
+ console.log(calculateStringLength("sanjay"))
+
+//5//
+const students = [
+  { name: "Alice", age: 20, grade: 85 },
+  { name: "Bob", age: 22, grade: 92 },
+  { name: "Charlie", age: 19, grade: 88 }
+];
+
+
+//5.1//
+
+
+  const calculateAverageGrade = (students) => {
+    const totalGrade = students.reduce((acc, student) => acc + student.grade, 0);
+    return totalGrade / students.length;
+  };
+ console.log("Average Grade: ", calculateAverageGrade(students))
+
+
+//5.2//
+const getNames = (students) => students.map(student => student.name);
+
+console.log(getNames(students));  // Expected output: ["Alice", "Bob", "Charlie"]
+
+//5.3//
+
+const calculateAverageAge = (students) => {
+  const totalAge = students.reduce((acc, student) => acc + student.age, 0);
+  return totalAge / students.length;
+};
+
+console.log(calculateAverageAge(students));  // Expected output: 20.33
+
+//5.4//
+
+const highGrades = (students) => {
+  let filtered = [];
+  for (let student of students) {
+    if (student.grade >= 90) {
+      filtered.push(student);
+    }
+  }
+  return filtered;
+};
+
+console.log(highGrades(students));  // Expected output: [{ name: "Bob", age: 22, grade: 92 }]
+
+//5.5//
+
+const isAnyBelow18 = (students) => students.some(student => student.age < 18);
+
+console.log(isAnyBelow18(students));  // Expected output: false
+
+//5.6//
+
+const findStudentByName = (students, name) => students.find(student => student.name === name);
+
+console.log(findStudentByName(students, "Charlie"));  // Expected output: { name: "Charlie", age: 19, grade: 88 }
+
+//5.7//
+
+const getHighScoreStudents = (students) => students.filter(student => student.grade > 85).map(student => student.name);
+
+console.log(getHighScoreStudents(students));  // Expected output: ["Bob", "Charlie"]
+
+
